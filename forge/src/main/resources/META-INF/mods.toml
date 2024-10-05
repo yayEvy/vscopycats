@@ -33,3 +33,10 @@ mandatory = true
 versionRange = "[${vs2_version},)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies.vs_addon_template]]
+modId = "architectury"
+mandatory = true
+versionRange = "[,)"
+ordering = "AFTER"
+side = "BOTH"

@@ -16,13 +16,22 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric"
+      {
+        "adapter": "kotlin",
+        "value": "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric"
+      }
     ],
     "client": [
-      "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric${'$'}Client"
+      {
+        "adapter": "kotlin",
+        "value": "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric${'$'}Client"
+      }
     ],
     "preLaunch": [
-      "io.github.techtastic.vs_addon_template.fabric.ValkyrienPreLaunch"
+      {
+        "adapter": "kotlin",
+        "value": "io.github.techtastic.vs_addon_template.fabric.ValkyrienPreLaunch"
+      }
     ]
   },
   "mixins": [
@@ -32,6 +41,8 @@
   "depends": {
     "minecraft": ">=1.18.2",
     "valkyrienskies": ">=${vs2_version}",
-    "fabricloader": ">=0.14.21"
+    "fabricloader": ">=0.14.21",
+    "fabric-api": "*",
+    "architectury": "*"
   }
 }
