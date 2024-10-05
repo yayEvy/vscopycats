@@ -36,7 +36,7 @@ dependencies {
     modImplementation("me.shedaniel.cloth:cloth-config:${cloth_config_version}")
 
     // Valkyrien Skies 2
-    modApi("org.valkyrienskies:valkyrienskies-118-fabric:${rootProject.vs2_version}")
+    modApi("org.valkyrienskies:valkyrienskies-120-fabric:${rootProject.vs2_version}")
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
@@ -45,8 +45,12 @@ dependencies {
 processResources {
     inputs.property "version", project.version
 
+
+    def props = project.properties
+    props['vs2_version'] = project.vs2_version.substring(0, project.vs2_version.indexOf('+'))
+
     filesMatching("fabric.mod.json") {
-        expand "version": project.version, "vs2_version": project.vs2_version.substring(0, project.vs2_version.indexOf('+'))
+        expand props
     }
 }
 

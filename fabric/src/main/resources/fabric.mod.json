@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "vs_addon_template",
+  "id": "${mod_id}",
   "version": "${version}",
-  "name": "VS Addon Template",
-  "description": "An Addon Template for VS2",
+  "name": "${mod_name}",
+  "description": "{$mod_description}",
   "authors": [
-    "You!"
+    "${mod_author}"
   ],
   "contact": {
-    "homepage": "https://valkyrienskies.org/",
-    "sources": "https://github.com/ValkyrienSkies/Eureka"
+    "homepage": "${homepage}",
+    "sources": "${sources}"
   },
-  "license": "Apache-2.0",
-  "icon": "assets/vs_addon_template/icon.png",
+  "license": "${mod_license}",
+  "icon": "assets/${mod_id}/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -39,10 +39,10 @@
     "vs_addon_template.mixins.json"
   ],
   "depends": {
-    "minecraft": ">=1.18.2",
+    "minecraft": "${minecraft_version}",
     "valkyrienskies": ">=${vs2_version}",
-    "fabricloader": ">=0.14.21",
+    "fabricloader": ">=${fabric_loader_version}",
     "fabric-api": "*",
-    "architectury": ">=4.10.86"
+    "architectury": ">=${architectury_version}"
   }
 }

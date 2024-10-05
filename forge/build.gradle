@@ -49,7 +49,7 @@ dependencies {
     include(modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}")
 
     // Valkyrien Skies 2
-    modApi("org.valkyrienskies:valkyrienskies-118-forge:$vs2_version") { transitive = false }
+    modApi("org.valkyrienskies:valkyrienskies-120-forge:$vs2_version") { transitive = false }
 
     // VS Core
     implementation("org.valkyrienskies.core:api:$vs_core_version")
@@ -67,8 +67,12 @@ dependencies {
 processResources {
     inputs.property "version", project.version
 
+    def props = project.properties
+    props['vs2_version'] = project.vs2_version.substring(0, project.vs2_version.indexOf('+'))
+    props['forge_version'] = project.forge_version.substring(project.forge_version.indexOf('.') + 1)
+
     filesMatching("META-INF/mods.toml") {
-        expand "version": project.version, "vs2_version": project.vs2_version.substring(0, project.vs2_version.indexOf('+'))
+        expand props
     }
 }
 
