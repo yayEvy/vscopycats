@@ -43,6 +43,6 @@
     "valkyrienskies": ">=${vs2_version}",
     "fabricloader": ">=0.14.21",
     "fabric-api": "*",
-    "architectury": "*"
+    "architectury": ">=4.10.86"
   }
 }

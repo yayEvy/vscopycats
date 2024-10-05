@@ -37,6 +37,6 @@ side = "BOTH"
 [[dependencies.vs_addon_template]]
 modId = "architectury"
 mandatory = true
-versionRange = "[,)"
+versionRange = "[4.10.86,)"
 ordering = "AFTER"
 side = "BOTH"
