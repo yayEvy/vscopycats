@@ -17,19 +17,16 @@
   "entrypoints": {
     "main": [
       {
-        "adapter": "kotlin",
         "value": "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric"
       }
     ],
     "client": [
       {
-        "adapter": "kotlin",
         "value": "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric${'$'}Client"
       }
     ],
     "preLaunch": [
       {
-        "adapter": "kotlin",
         "value": "io.github.techtastic.vs_addon_template.fabric.ValkyrienPreLaunch"
       }
     ]

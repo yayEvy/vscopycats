@@ -3,7 +3,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // Make sure this version matches the one included in Kotlin for Forge
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
         // OPTIONAL Gradle plugin for Kotlin Serialization
         classpath 'org.jetbrains.kotlin:kotlin-serialization:1.6.10'
@@ -57,11 +56,11 @@ dependencies {
     implementation("org.valkyrienskies.core:util:$vs_core_version")
     implementation("org.valkyrienskies.core:impl:$vs_core_version")
 
+    // VS needs Kotlin For Forge, even though we don't
+    implementation "thedarkcolour:kotlinforforge:$kff_version"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
-
-    // Kotlin for Forge
-    implementation "thedarkcolour:kotlinforforge:$forge_kotlin_version"
 }
 
 processResources {

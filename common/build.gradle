@@ -12,6 +12,10 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 
     // Architectury API
+    // NOTE: This is only for the platform-independent API stuff.
+    // This WILL make your Forge jar depend on Architectury API
+    // This is OPTIONAL. You can still use architectury, just without this API.
+    // (You'll just have to do more loader-specific stuff)
     modApi "dev.architectury:architectury:${rootProject.architectury_version}"
 
     // Valkyrien Skies 2
@@ -22,9 +26,6 @@ dependencies {
     compileOnly("org.valkyrienskies.core:api-game:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:impl:${rootProject.vs_core_version}")
-
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10"
-    api "org.jetbrains.kotlin:kotlin-reflect:1.9.10"
 }
 
 publishing {
