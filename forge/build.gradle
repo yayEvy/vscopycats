@@ -1,7 +1,37 @@
 buildscript {
     repositories {
         mavenCentral()
+
+        maven {
+            name = "ParchmentMC"
+            url = "https://maven.parchmentmc.org"
+        }
+
+        maven {
+            name = 'KotlinforForge'
+            url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        }
+
+        maven {
+            name = "ValkyrienSkiesInternal"
+            url = 'https://maven.valkyrienskies.org'
+        }
+        maven {
+            name = "Modrinth"
+            url = "https://api.modrinth.com/maven"
+        }
+
+
+        flatDir {
+            dir 'libs'
+        }
+
+        mavenLocal()
+        mavenCentral()
+
+
     }
+
     dependencies {
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
         // OPTIONAL Gradle plugin for Kotlin Serialization
@@ -59,6 +89,10 @@ dependencies {
     // VS needs Kotlin For Forge, even though we don't
     implementation "thedarkcolour:kotlinforforge:$kff_version"
 
+    implementation ("com.simibubi.create:create-${minecraft_version}:${create_forge_version}:slim") { transitive = false }
+    implementation ("com.tterrag.registrate:Registrate:${registrate_forge_version}")
+    implementation ("com.jozufozu.flywheel:flywheel-forge-${flywheel_forge_minecraft_version}:${flywheel_forge_version}")
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
@@ -87,6 +121,7 @@ shadowJar {
     configurations = [project.configurations.shadowCommon]
     archiveClassifier.set "dev-shadow"
 }
+
 
 remapJar {
     input.set shadowJar.archiveFile
@@ -144,5 +179,90 @@ publishing {
                 }
             }
         }
+        mavenCentral()
+
+        maven { url 'https://modmaven.dev/' }
+
+
+
+        maven {
+            url "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+
+
+
+        maven {
+            name = "ParchmentMC"
+            url = "https://maven.parchmentmc.org"
+        }
+
+        maven {
+            name = 'KotlinforForge'
+            url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        }
+
+        maven {
+            name = "ValkyrienSkiesInternal"
+            url = 'https://maven.valkyrienskies.org'
+        }
+        maven {
+            name = "Modrinth"
+            url = "https://api.modrinth.com/maven"
+        }
+
+
+        flatDir {
+            dir 'libs'
+        }
+
+        mavenLocal()
+        mavenCentral()
+
     }
+
+}
+repositories {
+    mavenCentral()
+
+    maven { url 'https://modmaven.dev/' }
+
+
+
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+
+
+
+    maven {
+        name = "ParchmentMC"
+        url = "https://maven.parchmentmc.org"
+    }
+
+    maven {
+        name = 'KotlinforForge'
+        url = 'https://thedarkcolour.github.io/KotlinForForge/'
+    }
+
+    maven {
+        name = "ValkyrienSkiesInternal"
+        url = 'https://maven.valkyrienskies.org'
+    }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
+
+
+    flatDir {
+        dir 'libs'
+    }
+
+    mavenLocal()
 }

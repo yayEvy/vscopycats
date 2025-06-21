@@ -17,17 +17,17 @@
   "entrypoints": {
     "main": [
       {
-        "value": "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric"
+        "value": "mod.everest.evy.vscopycats.fabric.VSCopyCats"
       }
     ],
     "client": [
       {
-        "value": "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric${'$'}Client"
+        "value": "mod.everest.evy.vscopycats.fabric.Client"
       }
     ],
     "preLaunch": [
       {
-        "value": "io.github.techtastic.vs_addon_template.fabric.ValkyrienPreLaunch"
+        "value": "mod.everest.evy.vscopycats.fabric.ValkyrienPreLaunch"
       }
     ]
   },
